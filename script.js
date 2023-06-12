@@ -1,5 +1,5 @@
 //Created on 10-06-2023
-//lastly updated on 11-06-2023
+//lastly updated on 12-06-2023
 
 //Creating reference for needed element in DOM
 let statusDisplay=document.querySelector('.status');
@@ -8,6 +8,8 @@ let pcWinCountDisplay=document.querySelector('.pcWinCount');
 let userGuessUpdate=document.querySelector('.playerGuess');
 let pcGuessUpdate=document.querySelector('.computerGuess');
 let reset=document.querySelector('.reset');
+let signs=document.querySelectorAll('.sign');
+let sign=[...signs];
 
 //Win Count declaration
 let userWinCount=0;
@@ -32,9 +34,12 @@ function playGround(value,computerGuess){  //computerGuess is a callback from ga
     let status="";
     cGuess=computerGuess(); //getting computer's guess.
     uGuess=value;
-
-    userGuessUpdate.textContent = `Your Guess: ${uGuess}`;
-    pcGuessUpdate.textContent = `Computer Guess: ${cGuess}`;
+    
+    let uSignValue=(uGuess=="Rock")? 0 :(uGuess=="Paper") ? 1 : (uGuess=="Scissors") ? 2 : true;
+    let cSignValue=(cGuess=="Rock")? 0 :(cGuess=="Paper") ? 1 : (cGuess=="Scissors") ? 2 : true;
+    
+    userGuessUpdate.textContent = `Your Choice: ${sign[uSignValue].textContent}`;
+    pcGuessUpdate.textContent = `Computer Choice: ${sign[cSignValue].textContent}`;
 
     //I intentionally wrote Switch for this.
     switch(uGuess){
@@ -105,6 +110,7 @@ function game(guess,playGroundCallback,computerGuessCallback){
 function resetFunction(){
     let resetButton=document.createElement('button');
     resetButton.textContent="Reset"
+    resetButton.classList.add('reset-button')
     reset.append(resetButton)
     resetButton.addEventListener('click',()=>{
         reset.removeChild(resetButton);

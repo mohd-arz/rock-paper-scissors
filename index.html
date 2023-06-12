@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Cut&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
+    <script src="https://kit.fontawesome.com/cec8c641c5.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
@@ -15,18 +19,25 @@
             <h3 class="computerGuess"></h3>
         </div>
         <div class="buttons">
-            <button class="Rock">Rock</button>
-            <button class="Paper">Paper</button>
-            <button class="Scissors">Scissors</button>
+            <button class="Rock">
+                <p class="sign">✊</p>
+            </button>
+            <button class="Paper">
+                <p class="sign">✋</p>
+            </button>
+            <button class="Scissors">
+                <p class="sign">✌️</p>
+            </button>
         </div>
         <div class="result">
             <p class="status"></p>
             <p class="userWinCount"></p>
             <p class="pcWinCount"></p>
         </div>
+        <div class="reset"></div>
     </div>
-
-   <div class="reset"></div>
+   
+   <footer class="author">Copyright © Mohammed Arsh M 2023 <a href="https://github.com/mohd-arz" target="_blank"><i class="fa-brands fa-github"></i></a></footer>
     
 </body>
 </html>
